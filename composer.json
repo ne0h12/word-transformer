@@ -1,0 +1,19 @@
+{
+    "name": "ne0h12/word-transformer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Klyachin",
+            "email": "ne0h12@yandex.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+      "php": ">=5.4"
+    },
+    "autoload": {
+      "psr-0": {
+        "WordTransformer": "src/"
+      }
+    }
+}
