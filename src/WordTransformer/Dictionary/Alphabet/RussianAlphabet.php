@@ -21,4 +21,16 @@ class RussianAlphabet implements AlphabetInterface
             'э', 'ю', 'я'
         ];
     }
+
+    public function getUpperCaseLetters()
+    {
+        return [
+            'А', 'Б', 'В', 'Г', 'Д', 'Е',
+            'Ё', 'Ж', 'З', 'И', 'Й', 'К',
+            'Л', 'М', 'Н', 'О', 'П', 'Р',
+            'С', 'Т', 'У', 'Ф', 'Ц', 'Ц',
+            'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь',
+            'Э', 'Ю', 'Я'
+        ];
+    }
 }

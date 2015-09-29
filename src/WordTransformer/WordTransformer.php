@@ -9,24 +9,26 @@ use WordTransformer\Dictionary\DictionaryInterface;
 use WordTransformer\Exception\InvalidArgumentException;
 use WordTransformer\Graph\GraphTraversal\BreadthFirstSearchAlgorithm;
 use WordTransformer\Graph\RuleComparison\DifferenceSingleLetter;
-use WordTransformer\Search\SearchEngineInterface;
 use WordTransformer\Validator\WordTransformValidator;
 
 class WordTransformer
 {
     private $dictionary;
-    private $searchEngine;
 
     /**
      * @param DictionaryInterface $dictionary
-     * @param SearchEngineInterface $searchEngine
      */
-    public function __construct(DictionaryInterface $dictionary, SearchEngineInterface $searchEngine)
+    public function __construct(DictionaryInterface $dictionary)
     {
         $this->dictionary = $dictionary;
-        $this->searchEngine = $searchEngine; // Maybe Elastic, Lucene, Sphinx, etc..
     }
 
+    /**
+     * @param string $from
+     * @param string $to
+     * @return array
+     * @throws InvalidArgumentException
+     */
     public function transform($from, $to)
     {
         if (WordTransformValidator::isInvalid($from, $to)) {
@@ -38,9 +40,12 @@ class WordTransformer
         return (new BreadthFirstSearchAlgorithm())->traversal($graph, $from, $to);
     }
 
+    /**
+     * @return Graph\Graph
+     */
     private function buildGraph()
     {
-        $builder = new Graph\GraphBuilder($this->dictionary, $this->searchEngine);
+        $builder = new Graph\GraphBuilder($this->dictionary);
 
         return $builder->build(new DifferenceSingleLetter());
     }

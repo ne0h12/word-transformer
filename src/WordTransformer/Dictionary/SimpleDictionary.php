@@ -5,7 +5,6 @@
 
 namespace WordTransformer\Dictionary;
 
-
 class SimpleDictionary implements DictionaryInterface
 {
     /**
@@ -14,24 +13,9 @@ class SimpleDictionary implements DictionaryInterface
     public function getWords()
     {
         return [
-            'муха',
-            'пара',
-            'тура',
-            'тара',
-            'паук',
-            'фура',
-            'плут',
-            'мука',
-            'слот',
-            'паут',
-            'фора',
-            'мура',
-            'плот',
-            'рука',
-            'кора',
-            'руна',
-            'парк',
-            'слон',
+            'муха', 'пара', 'тура', 'бор', 'тара', 'паук', 'фура', 'плут', 'мука', 'мир',
+            'слот', 'паут', 'фора', 'мура', 'плот', 'рука', 'кора', 'руна', 'бра',
+            'парк', 'слон', 'мор', 'эра', 'боа', 'миг',
         ];
     }
 

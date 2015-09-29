@@ -13,4 +13,9 @@ interface AlphabetInterface
      * @return array
      */
     public function getLowerCaseLetters();
+
+    /**
+     * @return array
+     */
+    public function getUpperCaseLetters();
 }

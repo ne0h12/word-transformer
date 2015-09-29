@@ -5,6 +5,8 @@
 
 namespace WordTransformer\Validator;
 
+use WordTransformer\Utils\String;
+
 class WordTransformValidator
 {
     /**
@@ -17,11 +19,11 @@ class WordTransformValidator
         $invalid = false;
 
         if (!is_string($from) || !is_string($to)) {
-            return true;
+            return $invalid = true;
         }
 
-        if (strlen($from) != strlen($to)) {
-            return true;
+        if (String::length($from) != String::length($to)) {
+            return $invalid = true;
         }
 
         return $invalid;
